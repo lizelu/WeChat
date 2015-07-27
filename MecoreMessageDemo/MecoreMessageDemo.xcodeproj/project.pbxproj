@@ -22,12 +22,6 @@
 		0F6560DA19D3943A0090093A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6560D919D3943A0090093A /* AppDelegate.m */; };
 		0F6560DD19D3943A0090093A /* MecoreMessageDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F6560DB19D3943A0090093A /* MecoreMessageDemo.xcdatamodeld */; };
 		0F6560DF19D3943A0090093A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F6560DE19D3943A0090093A /* Images.xcassets */; };
-		0F6560E619D3943A0090093A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6560E519D3943A0090093A /* XCTest.framework */; };
-		0F6560E719D3943A0090093A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6560C719D394390090093A /* Foundation.framework */; };
-		0F6560E819D3943A0090093A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6560CB19D3943A0090093A /* UIKit.framework */; };
-		0F6560E919D3943A0090093A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F6560CD19D3943A0090093A /* CoreData.framework */; };
-		0F6560F119D3943A0090093A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0F6560EF19D3943A0090093A /* InfoPlist.strings */; };
-		0F6560F319D3943A0090093A /* MecoreMessageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F6560F219D3943A0090093A /* MecoreMessageDemoTests.m */; };
 		0F65610919D395060090093A /* TextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F65610419D395060090093A /* TextCell.m */; };
 		0F65610A19D395060090093A /* MyTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F65610619D395060090093A /* MyTextCell.m */; };
 		0F65610B19D395060090093A /* VoiceCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F65610819D395060090093A /* VoiceCellTableViewCell.m */; };
@@ -436,18 +430,8 @@
 		0FC2092B19D4002000B57249 /* heImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2092A19D4002000B57249 /* heImageCell.m */; };
 		0FC2092E19D4151500B57249 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC2092D19D4151500B57249 /* ImageViewController.m */; };
 		0FDAAADA19D50FE900C14AF6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FDAAAD919D50FE900C14AF6 /* LoginViewController.m */; };
-		E5BFE5AC71BA4D298674DA77 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEA590D2EC14834BC20621A /* libPods.a */; };
+		E5BFE5AC71BA4D298674DA77 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AEA590D2EC14834BC20621A /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0F6560EA19D3943A0090093A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0F6560BC19D394390090093A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0F6560C319D394390090093A;
-			remoteInfo = MecoreMessageDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0F0E576019D90269008C06EE /* HistoryFriendTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryFriendTableViewController.h; sourceTree = "<group>"; };
@@ -474,7 +458,6 @@
 		0F6560D919D3943A0090093A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0F6560DC19D3943A0090093A /* MecoreMessageDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MecoreMessageDemo.xcdatamodel; sourceTree = "<group>"; };
 		0F6560DE19D3943A0090093A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0F6560E419D3943A0090093A /* MecoreMessageDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MecoreMessageDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F6560E519D3943A0090093A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		0F6560EE19D3943A0090093A /* MecoreMessageDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MecoreMessageDemoTests-Info.plist"; sourceTree = "<group>"; };
 		0F6560F019D3943A0090093A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -910,6 +893,9 @@
 		0FDAAADC19D54E0A00C14AF6 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		7AEA590D2EC14834BC20621A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E16C237AEFC4FEB99CB4FD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		C24AEC721B4D27A800524C4E /* libPods-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-AFNetworking.a"; path = "Pods/build/Debug-iphoneos/libPods-AFNetworking.a"; sourceTree = "<group>"; };
+		C24AEC7B1B4D2E5A00524C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C24AEC7C1B4D2E5A00524C4E /* MecoreMessageDemo_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MecoreMessageDemo_Tests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -927,17 +913,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F6560E119D3943A0090093A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F6560E619D3943A0090093A /* XCTest.framework in Frameworks */,
-				0F6560E919D3943A0090093A /* CoreData.framework in Frameworks */,
-				0F6560E819D3943A0090093A /* UIKit.framework in Frameworks */,
-				0F6560E719D3943A0090093A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -949,6 +924,7 @@
 				0FC1325E19E4F20000F4800D /* 1weixin.png */,
 				0F6560CF19D3943A0090093A /* MecoreMessageDemo */,
 				0F6560EC19D3943A0090093A /* MecoreMessageDemoTests */,
+				C24AEC791B4D2E5A00524C4E /* MecoreMessageDemo Tests */,
 				0F6560C619D394390090093A /* Frameworks */,
 				0F6560C519D394390090093A /* Products */,
 				9E16C237AEFC4FEB99CB4FD4 /* Pods.xcconfig */,
@@ -959,7 +935,6 @@
 			isa = PBXGroup;
 			children = (
 				0F6560C419D394390090093A /* MecoreMessageDemo.app */,
-				0F6560E419D3943A0090093A /* MecoreMessageDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -967,6 +942,7 @@
 		0F6560C619D394390090093A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C24AEC721B4D27A800524C4E /* libPods-AFNetworking.a */,
 				0F65642E19D398880090093A /* AudioToolbox.framework */,
 				0F65642C19D395A10090093A /* AVFoundation.framework */,
 				0F6560C719D394390090093A /* Foundation.framework */,
@@ -1519,6 +1495,23 @@
 			name = config;
 			sourceTree = "<group>";
 		};
+		C24AEC791B4D2E5A00524C4E /* MecoreMessageDemo Tests */ = {
+			isa = PBXGroup;
+			children = (
+				C24AEC7C1B4D2E5A00524C4E /* MecoreMessageDemo_Tests.m */,
+				C24AEC7A1B4D2E5A00524C4E /* Supporting Files */,
+			);
+			path = "MecoreMessageDemo Tests";
+			sourceTree = "<group>";
+		};
+		C24AEC7A1B4D2E5A00524C4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C24AEC7B1B4D2E5A00524C4E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1541,24 +1534,6 @@
 			productReference = 0F6560C419D394390090093A /* MecoreMessageDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0F6560E319D3943A0090093A /* MecoreMessageDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0F6560F919D3943A0090093A /* Build configuration list for PBXNativeTarget "MecoreMessageDemoTests" */;
-			buildPhases = (
-				0F6560E019D3943A0090093A /* Sources */,
-				0F6560E119D3943A0090093A /* Frameworks */,
-				0F6560E219D3943A0090093A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0F6560EB19D3943A0090093A /* PBXTargetDependency */,
-			);
-			name = MecoreMessageDemoTests;
-			productName = MecoreMessageDemoTests;
-			productReference = 0F6560E419D3943A0090093A /* MecoreMessageDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1567,11 +1542,6 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Mrli;
-				TargetAttributes = {
-					0F6560E319D3943A0090093A = {
-						TestTargetID = 0F6560C319D394390090093A;
-					};
-				};
 			};
 			buildConfigurationList = 0F6560BF19D394390090093A /* Build configuration list for PBXProject "MecoreMessageDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1586,7 +1556,6 @@
 			projectRoot = "";
 			targets = (
 				0F6560C319D394390090093A /* MecoreMessageDemo */,
-				0F6560E319D3943A0090093A /* MecoreMessageDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1993,14 +1962,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F6560E219D3943A0090093A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F6560F119D3943A0090093A /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -2067,23 +2028,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F6560E019D3943A0090093A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F6560F319D3943A0090093A /* MecoreMessageDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0F6560EB19D3943A0090093A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0F6560C319D394390090093A /* MecoreMessageDemo */;
-			targetProxy = 0F6560EA19D3943A0090093A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0F6560D219D3943A0090093A /* InfoPlist.strings */ = {
@@ -2182,6 +2127,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MecoreMessageDemo/MecoreMessageDemo-Prefix.pch";
 				INFOPLIST_FILE = "MecoreMessageDemo/MecoreMessageDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2194,48 +2143,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MecoreMessageDemo/MecoreMessageDemo-Prefix.pch";
 				INFOPLIST_FILE = "MecoreMessageDemo/MecoreMessageDemo-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		0F6560FA19D3943A0090093A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MecoreMessageDemo.app/MecoreMessageDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MecoreMessageDemo/MecoreMessageDemo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MecoreMessageDemoTests/MecoreMessageDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		0F6560FB19D3943A0090093A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MecoreMessageDemo.app/MecoreMessageDemo";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MecoreMessageDemo/MecoreMessageDemo-Prefix.pch";
-				INFOPLIST_FILE = "MecoreMessageDemoTests/MecoreMessageDemoTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -2256,15 +2169,6 @@
 			buildConfigurations = (
 				0F6560F719D3943A0090093A /* Debug */,
 				0F6560F819D3943A0090093A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0F6560F919D3943A0090093A /* Build configuration list for PBXNativeTarget "MecoreMessageDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0F6560FA19D3943A0090093A /* Debug */,
-				0F6560FB19D3943A0090093A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

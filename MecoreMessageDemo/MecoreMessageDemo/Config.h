@@ -9,8 +9,8 @@
 #ifndef MecoreMessageDemo_Config_h
 #define MecoreMessageDemo_Config_h
 
-#define HTTPSERVER @"http://xuyingtest.sinaapp.com/uploadfile.php"
+#define HTTPSERVER @"你自己的文件上传地址"
 
-#define MY_DOMAIN @"xuyingcloud.com"
+#define MY_DOMAIN @"你自己的聊天服务器"
 
 #endif
