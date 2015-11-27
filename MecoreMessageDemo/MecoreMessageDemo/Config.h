@@ -11,6 +11,7 @@
 
 #define HTTPSERVER @"你自己的文件上传地址"
 
-#define MY_DOMAIN @"你自己的聊天服务器"
+#define MY_DOMAIN @"127.0.0.1"//10.106.90.47
 
 #endif
+

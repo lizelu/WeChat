@@ -877,9 +877,9 @@
 		0FC1325B19E4EEF100F4800D /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = weixin.png; path = ../weixin.png; sourceTree = "<group>"; };
 		0FC1325C19E4F0C000F4800D /* lanch1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lanch1.png; path = ../lanch1.png; sourceTree = "<group>"; };
 		0FC1325D19E4F0CC00F4800D /* lanch2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lanch2.png; path = ../lanch2.png; sourceTree = "<group>"; };
-		0FC1325E19E4F20000F4800D /* 1weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1weixin.png; sourceTree = "<group>"; };
-		0FC1325F19E4F22C00F4800D /* 1weixin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1weixin1.png; sourceTree = "<group>"; };
-		0FC1326019E51EE600F4800D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0FC1325E19E4F20000F4800D /* 1weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1weixin.png; path = ../1weixin.png; sourceTree = "<group>"; };
+		0FC1325F19E4F22C00F4800D /* 1weixin1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1weixin1.png; path = ../1weixin1.png; sourceTree = "<group>"; };
+		0FC1326019E51EE600F4800D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		0FC2092219D3EE6600B57249 /* AlbumListCamera_ios7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AlbumListCamera_ios7@2x.png"; sourceTree = "<group>"; };
 		0FC2092419D3EEB400B57249 /* Fav_Filter_Img_HL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fav_Filter_Img_HL@2x.png"; sourceTree = "<group>"; };
 		0FC2092619D3FD2E00B57249 /* MyImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyImageCell.h; sourceTree = "<group>"; };
@@ -920,9 +920,6 @@
 		0F6560BB19D394390090093A = {
 			isa = PBXGroup;
 			children = (
-				0FC1326019E51EE600F4800D /* Default-568h@2x.png */,
-				0FC1325F19E4F22C00F4800D /* 1weixin1.png */,
-				0FC1325E19E4F20000F4800D /* 1weixin.png */,
 				0F6560CF19D3943A0090093A /* MecoreMessageDemo */,
 				0F6560EC19D3943A0090093A /* MecoreMessageDemoTests */,
 				C24AEC791B4D2E5A00524C4E /* MecoreMessageDemo Tests */,
@@ -959,6 +956,7 @@
 		0F6560CF19D3943A0090093A /* MecoreMessageDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F441D6C41C08467800C6D299 /* Image */,
 				0FDAAADB19D54DEF00C14AF6 /* config */,
 				0F65610219D394E50090093A /* cell */,
 				0F65610119D394DA0090093A /* Model */,
@@ -1520,6 +1518,16 @@
 				C24AEC7B1B4D2E5A00524C4E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F441D6C41C08467800C6D299 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				0FC1326019E51EE600F4800D /* Default-568h@2x.png */,
+				0FC1325F19E4F22C00F4800D /* 1weixin1.png */,
+				0FC1325E19E4F20000F4800D /* 1weixin.png */,
+			);
+			name = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2150,6 +2158,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C546FCB919E5C080C00AC0A1 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MecoreMessageDemo/MecoreMessageDemo-Prefix.pch";
 				INFOPLIST_FILE = "MecoreMessageDemo/MecoreMessageDemo-Info.plist";
@@ -2166,6 +2176,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C9AAE4B50CAC8218482DD56B /* Pods.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MecoreMessageDemo/MecoreMessageDemo-Prefix.pch";
 				INFOPLIST_FILE = "MecoreMessageDemo/MecoreMessageDemo-Info.plist";
