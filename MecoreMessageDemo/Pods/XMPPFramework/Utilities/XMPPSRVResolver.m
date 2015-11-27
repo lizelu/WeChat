@@ -8,6 +8,10 @@
 #import "XMPPSRVResolver.h"
 #import "XMPPLogging.h"
 
+//#warning Fix "dns.h" issue without resorting to this ugly hack.
+// This is a hack to prevent OnionKit's clobbering of the actual system's <dns.h>
+//#include "/usr/include/dns.h"
+
 #include <dns_util.h>
 #include <stdlib.h>
 
@@ -168,7 +172,7 @@ NSString *const XMPPSRVResolverErrorDomain = @"XMPPSRVResolverErrorDomain";
 		
 		if (srvResultsCount == 1)
 		{
-			XMPPSRVRecord *srvRecord = [results objectAtIndex:0];
+			XMPPSRVRecord *srvRecord = results[0];
 			
 			[sortedResults addObject:srvRecord];
 			[results removeObjectAtIndex:0];
@@ -188,7 +192,7 @@ NSString *const XMPPSRVResolverErrorDomain = @"XMPPSRVResolverErrorDomain";
 			NSUInteger runningSum = 0;
 			NSMutableArray *samePriorityRecords = [NSMutableArray arrayWithCapacity:srvResultsCount];
 			
-			XMPPSRVRecord *srvRecord = [results objectAtIndex:0];
+			XMPPSRVRecord *srvRecord = results[0];
 			
 			NSUInteger initialPriority = srvRecord.priority;
 			NSUInteger index = 0;
@@ -216,7 +220,7 @@ NSString *const XMPPSRVResolverErrorDomain = @"XMPPSRVResolverErrorDomain";
 				
 				if (++index < srvResultsCount)
 				{
-					srvRecord = [results objectAtIndex:index];
+					srvRecord = results[index];
 				}
 				else
 				{
@@ -540,7 +544,7 @@ static void QueryRecordCallback(DNSServiceRef       sdRef,
 			dispatch_source_set_event_handler(timeoutTimer, ^{ @autoreleasepool {
 				
 				NSString *errMsg = @"Operation timed out";
-				NSDictionary *userInfo = [NSDictionary dictionaryWithObject:errMsg forKey:NSLocalizedDescriptionKey];
+				NSDictionary *userInfo = @{NSLocalizedDescriptionKey : errMsg};
 				
 				NSError *err = [NSError errorWithDomain:XMPPSRVResolverErrorDomain code:0 userInfo:userInfo];
 				

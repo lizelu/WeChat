@@ -892,10 +892,11 @@
 		0FDAAAD919D50FE900C14AF6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0FDAAADC19D54E0A00C14AF6 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		7AEA590D2EC14834BC20621A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E16C237AEFC4FEB99CB4FD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		C24AEC721B4D27A800524C4E /* libPods-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-AFNetworking.a"; path = "Pods/build/Debug-iphoneos/libPods-AFNetworking.a"; sourceTree = "<group>"; };
 		C24AEC7B1B4D2E5A00524C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C24AEC7C1B4D2E5A00524C4E /* MecoreMessageDemo_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MecoreMessageDemo_Tests.m; sourceTree = "<group>"; };
+		C546FCB919E5C080C00AC0A1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C9AAE4B50CAC8218482DD56B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -927,7 +928,7 @@
 				C24AEC791B4D2E5A00524C4E /* MecoreMessageDemo Tests */,
 				0F6560C619D394390090093A /* Frameworks */,
 				0F6560C519D394390090093A /* Products */,
-				9E16C237AEFC4FEB99CB4FD4 /* Pods.xcconfig */,
+				7A02C55F2D709D7BF4416EED /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1495,6 +1496,15 @@
 			name = config;
 			sourceTree = "<group>";
 		};
+		7A02C55F2D709D7BF4416EED /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C546FCB919E5C080C00AC0A1 /* Pods.debug.xcconfig */,
+				C9AAE4B50CAC8218482DD56B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C24AEC791B4D2E5A00524C4E /* MecoreMessageDemo Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1524,6 +1534,7 @@
 				0F6560C119D394390090093A /* Frameworks */,
 				0F6560C219D394390090093A /* Resources */,
 				4E7EB96780B342A893D659FC /* Copy Pods Resources */,
+				0C819536A4EEE38AECF47E5F /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1965,6 +1976,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0C819536A4EEE38AECF47E5F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		14F454D8CD8F4A31AC652159 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1992,7 +2018,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2122,7 +2148,7 @@
 		};
 		0F6560F719D3943A0090093A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E16C237AEFC4FEB99CB4FD4 /* Pods.xcconfig */;
+			baseConfigurationReference = C546FCB919E5C080C00AC0A1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MecoreMessageDemo/MecoreMessageDemo-Prefix.pch";
@@ -2138,7 +2164,7 @@
 		};
 		0F6560F819D3943A0090093A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E16C237AEFC4FEB99CB4FD4 /* Pods.xcconfig */;
+			baseConfigurationReference = C9AAE4B50CAC8218482DD56B /* Pods.release.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MecoreMessageDemo/MecoreMessageDemo-Prefix.pch";

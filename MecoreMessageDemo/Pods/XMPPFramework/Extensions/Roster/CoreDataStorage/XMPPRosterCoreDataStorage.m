@@ -27,7 +27,7 @@
 
 static XMPPRosterCoreDataStorage *sharedInstance;
 
-+ (XMPPRosterCoreDataStorage *)sharedInstance
++ (instancetype)sharedInstance
 {
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
@@ -260,7 +260,7 @@ static XMPPRosterCoreDataStorage *sharedInstance;
 #pragma mark Protocol Private API
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-- (void)beginRosterPopulationForXMPPStream:(XMPPStream *)stream
+- (void)beginRosterPopulationForXMPPStream:(XMPPStream *)stream withVersion:(NSString *)version
 {
 	XMPPLogTrace();
 	
@@ -369,6 +369,8 @@ static XMPPRosterCoreDataStorage *sharedInstance;
 - (void)handlePresence:(XMPPPresence *)presence xmppStream:(XMPPStream *)stream
 {
 	XMPPLogTrace();
+    
+    BOOL allowRosterlessOperation = [parent allowRosterlessOperation];
 	
 	[self scheduleBlock:^{
 		
@@ -379,7 +381,7 @@ static XMPPRosterCoreDataStorage *sharedInstance;
 		
 		XMPPUserCoreDataStorageObject *user = [self userForJID:jid xmppStream:stream managedObjectContext:moc];
 		
-		if (user == nil && [parent allowRosterlessOperation])
+		if (user == nil && allowRosterlessOperation)
 		{
 			// This may happen if the roster is in rosterlessOperation mode.
 			
@@ -522,5 +524,52 @@ static XMPPRosterCoreDataStorage *sharedInstance;
     return results;
 }
 
+- (void)getSubscription:(NSString **)subscription
+                    ask:(NSString **)ask
+               nickname:(NSString **)nickname
+                 groups:(NSArray **)groups
+                 forJID:(XMPPJID *)jid
+             xmppStream:(XMPPStream *)stream
+{
+    XMPPLogTrace();
+        
+    [self executeBlock:^{
+        
+        NSManagedObjectContext *moc = [self managedObjectContext];
+        XMPPUserCoreDataStorageObject *user = [self userForJID:jid xmppStream:stream managedObjectContext:moc];
+        
+        if(user)
+        {
+            if(subscription)
+            {
+                *subscription = user.subscription;
+            }
+            
+            if(ask)
+            {
+                *ask = user.ask;
+            }
+            
+            if(nickname)
+            {
+                *nickname = user.nickname;
+            }
+            
+            if(groups)
+            {
+                if([user.groups count])
+                {
+                    NSMutableArray *groupNames = [NSMutableArray array];
+                    
+                    for(XMPPGroupCoreDataStorageObject *group in user.groups){
+                        [groupNames addObject:group.name];
+                    }
+                    
+                    *groups = groupNames;
+                }
+            }
+        }
+    }];
+}
 
 @end
