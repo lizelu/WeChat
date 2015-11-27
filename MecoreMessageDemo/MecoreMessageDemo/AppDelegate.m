@@ -12,19 +12,12 @@
 #import <XMPPReconnect.h>
 #import <XMPPMessageArchiving.h>
 #import "LoginViewController.h"
-@interface AppDelegate ()
-{
-    //重新连接
-    XMPPReconnect *xmppReconnect;
-    
-    //消息保存
-    XMPPMessageArchiving * xmppMessageArchiving;
-    //把请求的数据添加到CoreDate中
-    XMPPMessageArchivingCoreDataStorage * messageStorage;
+@interface AppDelegate (){
+    XMPPReconnect *xmppReconnect;                           //重新连接
+    XMPPMessageArchiving * xmppMessageArchiving;            //消息保存
+    XMPPMessageArchivingCoreDataStorage * messageStorage;   //把请求的数据添加到CoreDate中
   
-    
-    //好友列表保存
-    XMPPRoster *xmppRoster;
+    XMPPRoster *xmppRoster;                                 //好友列表保存
     XMPPRosterCoreDataStorage *xmppRosterStorage;
 }
 
@@ -40,24 +33,18 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self xmppInit];
     return YES;
 }
 
 
 //对XMPP相关组件进行初始化
--(void)xmppInit
-{
-    //创建xmppstream
-    self.xmppStream = [[XMPPStream alloc]init];
+-(void)xmppInit {
+    self.xmppStream = [[XMPPStream alloc]init];         //创建xmppstream
     
-    
-    //创建重写连接组件
-    xmppReconnect= [[XMPPReconnect alloc] init];
-    //使组件生效
-    [xmppReconnect activate:self.xmppStream];
+    xmppReconnect= [[XMPPReconnect alloc] init];        //创建重写连接组件
+    [xmppReconnect activate:self.xmppStream];           //使组件生效
     
     
     //创建消息保存策略（规则，规定）

@@ -74,7 +74,6 @@
 {
     // Return the number of sections.
     NSArray *sections = [self.fetchedResultsController sections];
-    NSLog(@"%d",sections.count);
     return sections.count;
 }
 
@@ -83,7 +82,7 @@
     NSArray *sectoins = [self.fetchedResultsController sections];
     id<NSFetchedResultsSectionInfo> sectionInfo = sectoins[section];
     
-    
+    NSLog(@"%ld", [sectionInfo numberOfObjects]);
     return [sectionInfo numberOfObjects];
 }
 

@@ -495,9 +495,9 @@ typedef enum : NSUInteger {
     NSLog(@"%@",dic);
 
  
-    
+    NSString *tempType = [NSString stringWithFormat:@"%@",dic[@"type"]];
     //根据文字计算cell的高度
-    if ([dic[@"type"] isEqualToNumber:@(SendText)]) {
+    if ([tempType isEqualToString:[NSString stringWithFormat:@"%ld", SendText]]) {
         NSMutableAttributedString *contentText = [self showFace:dic[@"content"]];
         
         CGRect textBound = [contentText boundingRectWithSize:CGSizeMake(150, 1000) options:NSStringDrawingUsesLineFragmentOrigin context:nil];
