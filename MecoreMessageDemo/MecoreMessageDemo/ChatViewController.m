@@ -62,13 +62,13 @@ typedef enum : NSUInteger {
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = self.sendUserName;
+    self.title = self.sendUserName;
     
     //初始化XMPP
     [self initXmpp];
    
     //设置接收者
-//    self.sendUserName = @"lizelu";
+    self.sendUserName = @"admin";
     
     //TableView的回调
     self.myTableView.delegate = self;
@@ -364,6 +364,9 @@ typedef enum : NSUInteger {
                     @"content":content};
 
     }
+    
+    
+    NSLog(@"%@", bodyDic);
     //把bodyDic转换成data类型
     NSError *error = nil;
     
@@ -376,23 +379,15 @@ typedef enum : NSUInteger {
     //把data转成字符串进行发送
     NSString *bodyString = [[NSString alloc] initWithData:bodyData encoding:NSUTF8StringEncoding];
     
-    //发送字符串
-    //1.构建JID
-    XMPPJID *jid = [XMPPJID  jidWithUser:self.sendUserName domain:MY_DOMAIN resource:@"iPhone"];
     
-    //2.获取XMPPMessage
-    XMPPMessage *xmppMessage = [XMPPMessage messageWithType:@"chat" to:jid];
+    NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
+    [body setStringValue:bodyString];
+    NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
+    [message addAttributeWithName:@"type" stringValue:@"chat"];
     
-    //3.添加body
-    [xmppMessage addBody:bodyString];
-    
-    //4.发送message
-    [self.xmppStream sendElement:xmppMessage];
-    
-    
-    //重载tableView
-    [self.myTableView  reloadData];
-    
+    [message addAttributeWithName:@"to" stringValue:_jidStr];
+    [message addChild:body];
+    [self.xmppStream sendElement:message];
 }
 
 

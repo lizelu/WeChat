@@ -21,8 +21,7 @@
 @implementation LoginViewController
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     UIColor *color = [UIColor colorWithPatternImage:[UIImage imageNamed:@"login.jpeg"]];
@@ -50,14 +49,12 @@
     
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
 
--(void) initXmpp
-{
+- (void)initXmpp {
     //获取应用的xmppSteam(通过Application中的单例获取)
     UIApplication *application = [UIApplication sharedApplication];
     id delegate = [application delegate];
@@ -68,17 +65,14 @@
 }
 
 
-- (IBAction)tapButton:(id)sender
-{
+- (IBAction)tapButton:(id)sender {
     [self xmppConnect];
-    
 }
 
 //连接服务器
--(void) xmppConnect
-{
-    if (![self.userNameTextFiled.text isEqualToString:@""] && self.userNameTextFiled.text != nil)
-    {
+- (void)xmppConnect {
+    if (![self.userNameTextFiled.text isEqualToString:@""] &&
+        self.userNameTextFiled.text != nil){
         //1.创建JID
         XMPPJID *jid = [XMPPJID jidWithUser:self.userNameTextFiled.text domain:MY_DOMAIN resource:@"iPhone"];
         
@@ -88,14 +82,10 @@
         //连接服务器
         NSError *error = nil;
         [self.xmppStream connectWithTimeout:10 error:&error];
-        if (error)
-        {
+        if (error) {
             NSLog(@"连接出错：%@",[error localizedDescription]);
         }
-
-    }
-    else
-    {
+    } else {
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"用户名不能为空" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:nil];
         [alter show];
     }
@@ -103,20 +93,16 @@
 
 
 //连接后的回调
--(void)xmppStreamDidConnect:(XMPPStream *)sender
-{
-    if (![self.passwordTextFiled.text isEqualToString:@""] && self.passwordTextFiled.text != nil)
-    {
+-(void)xmppStreamDidConnect:(XMPPStream *)sender {
+    if (![self.passwordTextFiled.text isEqualToString:@""] &&
+        self.passwordTextFiled.text != nil) {
         //连接成功后认证用户名和密码
         NSError *error = nil;
         [self.xmppStream authenticateWithPassword:self.passwordTextFiled.text error:&error];
-        if (error)
-        {
+        if (error) {
             NSLog(@"认证错误：%@",[error localizedDescription]);
         }
-    }
-    else
-    {
+    } else {
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"密码不能为空" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:nil];
         [alter show];
     }
@@ -124,8 +110,7 @@
 
 
 //认证成功后的回调
--(void)xmppStreamDidAuthenticate:(XMPPStream *)sender
-{
+-(void)xmppStreamDidAuthenticate:(XMPPStream *)sender {
     NSLog(@"登陆成功");
     
     //密码进入userDefault
@@ -144,26 +129,12 @@
 }
 
 //认证失败的回调
--(void)xmppStream:sender didNotAuthenticate:(DDXMLElement *)error
-{
+-(void)xmppStream:sender didNotAuthenticate:(DDXMLElement *)error {
     NSLog(@"认证失败");
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

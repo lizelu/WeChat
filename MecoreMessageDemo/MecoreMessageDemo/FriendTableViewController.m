@@ -43,35 +43,29 @@
     
     //获取内容
     
-    
     NSError * error;
-        if (![self.fetchedResultsController performFetch:&error])
-        {
-            NSLog(@"%s  %@",__FUNCTION__,[error localizedDescription]);
-        }
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"%s  %@",__FUNCTION__,[error localizedDescription]);
+    }
 
-        [self.tableView reloadData];
-    
+    [self.tableView reloadData];
 }
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self tapRefrash:nil];
     
 }
 
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     NSArray *sections = [self.fetchedResultsController sections];
     return sections.count;
