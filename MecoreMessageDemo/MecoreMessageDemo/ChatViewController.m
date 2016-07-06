@@ -68,7 +68,7 @@ typedef enum : NSUInteger {
     [self initXmpp];
    
     //设置接收者
-    self.sendUserName = @"admin";
+    //self.sendUserName = @"admin";
     
     //TableView的回调
     self.myTableView.delegate = self;
@@ -329,14 +329,17 @@ typedef enum : NSUInteger {
             }
         }
         
-        //从后往前替换
-        for (int i = (int)imageArray.count -1; i >= 0; i--)
-        {
-            NSRange range;
-            [imageArray[i][@"range"] getValue:&range];
-            //进行替换
-            [attributeString replaceCharactersInRange:range withAttributedString:imageArray[i][@"image"]];
-            
+        if (imageArray.count > 0) {
+            //从后往前替换
+            for (int i = (int)imageArray.count -1; i >= 0; i--)
+            {
+                NSRange range;
+                [imageArray[i][@"range"] getValue:&range];
+                //进行替换
+                [attributeString replaceCharactersInRange:range withAttributedString:imageArray[i][@"image"]];
+                
+            }
+
         }
         
         return  attributeString;
